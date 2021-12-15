@@ -1,0 +1,36 @@
+.header {
+  height: 80px;
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+.authentication {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0px 10px;
+  min-width: 65px;
+  height: 35px;
+  background-color: var(--color-sapphire);
+  color: #ffffff;
+  border-radius: var(--border-radius-medium);
+
+  margin: 0px 5px;
+  cursor: pointer;
+
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.userIcon {
+  width: 24px;
+  height: 24px;
+
+  margin-right: 0px;
+  filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(262deg) brightness(107%) contrast(100%);
+}

@@ -1,6 +1,8 @@
 :root {
   --color-white: #ffffff;
+  --color-dark-gray: #374151;
   --color-sapphire: #4761E6;
+  --color-red: #f44336;
   --light-blue: #F1F3FE;
   --dark-blue: rgb(58, 67, 115);
 
@@ -9,6 +11,7 @@
   --font-size-main: 16px;
 
   --border-radius-medium: 10px;
+  --border-radius-small: 6px;
 }
 
 * {
@@ -118,4 +121,9 @@ body {
 
 img {
   display: block;
+}
+
+.alert {
+  position: absolute;
+  color: var(--color-red);
 }

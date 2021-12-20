@@ -50,7 +50,7 @@ const vpassword = (value) => {
   }
 };
 
-const Register = () => {
+const Register = (props) => {
   const form = useRef();
   const checkBtn = useRef();
 
@@ -99,7 +99,7 @@ const Register = () => {
       <div className={styles.content}>
 
         <Form onSubmit={handleRegister} ref={form}>
-          {!successful && (
+          {!successful ? (
             <div>
               <div className={styles.formGroup}>
                 <label htmlFor="username" className={styles.label}>Username</label>
@@ -140,12 +140,12 @@ const Register = () => {
               <div className={styles.formGroup}>
                 <button className={styles.btnPrimary}>Sign Up</button>
               </div>
+
+              <p>You have an account? <NavLink className={styles.link} to='/login'>Log In!</NavLink></p>
             </div>
-          )}
+          ) : (props.history.push("/login"))}
 
           <CheckButton style={{ display: "none" }} ref={checkBtn} />
-
-          <p>You have an account? <NavLink className={styles.link} to='/login'>Log In!</NavLink></p>
         </Form>
       </div>
     </div>

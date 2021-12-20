@@ -9,7 +9,7 @@ const register = (username, email, password) => {
   });
 };
 
-const login = (username, email, password) => {
+const login = (username, password) => {
   return axios
     .post(API_URL + 'signin', {
       username,

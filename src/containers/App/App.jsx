@@ -3,6 +3,7 @@ import Feedback from '@components/Feedback';
 import routesConfig from '@routes/routesConfig';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import Header from '@components/Header';
+import AddComment from '@components/AddComment';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               />
             ))}
           </Switch>
+          <AddComment/>
         </div>
       </div>
     </BrowserRouter>

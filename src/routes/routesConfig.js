@@ -1,12 +1,13 @@
-import Feedback from '@components/Feedback';
+import HomaPage from '@containers/HomaPage';
 import Login from '@components/Login';
 import Register from '@components/Register';
+import NotFoundPage from '@containers/NotFoundPage';
 
 const routesConfig = [
   {
     path: '/',
     exact: true,
-    component: Feedback,
+    component: HomaPage,
   },
   {
     path: '/login',
@@ -18,6 +19,11 @@ const routesConfig = [
     exact: true,
     component: Register,
   },
+  {
+    path: '*',
+    exact: false,
+    component: NotFoundPage,
+  }
 ]
 
 export default routesConfig;

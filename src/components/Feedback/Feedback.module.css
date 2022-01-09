@@ -1,3 +1,4 @@
+
 .feedback_container {
   min-height: 100px;
 
@@ -30,7 +31,13 @@
 }
 
 .vote_cell:hover {
-  background-color: #ccd5ff;
+  background-color: #8090df;
+  color: var(--color-white);
+}
+
+.voted_cell {
+  background-color: var(--color-sapphire);
+  color: var(--color-white);
 }
 
 .feedback_cell {
@@ -42,6 +49,11 @@
   height: 7px;
   object-fit: cover;
   object-position: center center;
+  background-image: url("./img/icon-arrow-up.svg");
+}
+
+.voted_cell__image {
+  background-image: url("./img/icon-arrow-down.svg");
 }
 
 .feedback_title {

@@ -1,11 +1,11 @@
-
 .feedback_container {
   min-height: 100px;
 
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-
+  color: #000;
+  text-decoration: none;
   margin: 0px 0px 20px 0px;
   padding: 24px 32px;
   background-color: var(--color-white);
@@ -28,6 +28,7 @@
   font-size: 13px;
   text-align: center;
   transition: all 0.3s;
+  z-index: 3;
 }
 
 .vote_cell:hover {
@@ -49,11 +50,11 @@
   height: 7px;
   object-fit: cover;
   object-position: center center;
-  background-image: url("./img/icon-arrow-up.svg");
+  background-image: url('./img/icon-arrow-up.svg');
 }
 
 .voted_cell__image {
-  background-image: url("./img/icon-arrow-down.svg");
+  background-image: url('./img/icon-arrow-down.svg');
 }
 
 .feedback_title {

@@ -1,0 +1,19 @@
+.link {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top:  -40px;
+  padding: 0px 5px;
+  color: var(--color-sapphire);
+  font-weight: bold;
+}
+
+.link__img {
+  width: 20px;
+  height: 20px;
+  padding-right: 5px;
+  margin-right: var(--spacing-small);
+  object-fit: contain;
+  object-position: center center;
+  color: rgb(228, 129, 0);
+}

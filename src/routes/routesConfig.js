@@ -2,6 +2,7 @@ import HomaPage from '@containers/HomaPage';
 import Login from '@components/Login';
 import Register from '@components/Register';
 import NotFoundPage from '@containers/NotFoundPage';
+import FeedbackPage from '@containers/FeedbackPage';
 
 const routesConfig = [
   {
@@ -13,6 +14,11 @@ const routesConfig = [
     path: '/login',
     exact: true,
     component: Login,
+  },
+  {
+    path: '/posts/:id',
+    exact: true,
+    component: FeedbackPage,
   },
   {
     path: '/register',

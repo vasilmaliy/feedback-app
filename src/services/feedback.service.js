@@ -2,26 +2,27 @@ import axios from 'axios';
 import authHeader from './auth-header';
 import { API_FEEDBACK } from '@constants/api';
 
-const getFeedback = (userId) => {
-  return axios.get(API_FEEDBACK + 'post', {
-    userId,
-  });
+const getFeedback = (postId) => {
+  return axios.get(API_FEEDBACK + 'post/?postId=' + postId);
 };
 
-const unVote = (userId) => {
-  return axios.delete(API_FEEDBACK + 'unvote/?userId=' + userId, 
+const getFeedbacks = () => {
+  return axios.get(API_FEEDBACK + 'posts');
+};
+
+const unVote = (userId, postId) => {
+  return axios.delete(API_FEEDBACK + 'unvote/?userId=' + userId + "&postId="+postId, 
   {
     headers: authHeader(),
   });
 };
 
-const vote = (userId) => {
-
+const vote = (userId, postId) => {
   return axios.post(
     API_FEEDBACK + 'vote',
     {
       userId,
-      // postId,
+      postId,
     },
     {
       headers: authHeader(),
@@ -29,14 +30,15 @@ const vote = (userId) => {
   );
 };
 
-const checkIfVote = (userId) => {
-  return axios.get(API_FEEDBACK + 'vote/?userId=' + userId, {
+const checkIfVote = (userId, postId) => {
+  return axios.get(API_FEEDBACK + 'vote/?userId=' + userId + "&postId=" + postId, {
     headers: authHeader(),
   });
 };
 
 export default {
   getFeedback,
+  getFeedbacks,
   vote,
   unVote,
   checkIfVote,

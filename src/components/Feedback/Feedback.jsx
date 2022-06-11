@@ -4,8 +4,9 @@ import { useSelector } from 'react-redux';
 import comments_icon from "./img/icon-comments.svg";
 import FeedbackService from '@services/feedback.service.js';
 import cs from 'classnames';
+import { Link } from 'react-router-dom';
 
-const Feedback = () => {
+const Feedback = (props) => {
   
   const [user, setUser] = useState({})
   const [votes, setVotes] = useState(0);
@@ -15,7 +16,7 @@ const Feedback = () => {
   const { isLoggedIn } = useSelector(state => state.auth);
 
   const getResourse = ()  => {
-    FeedbackService.getFeedback()
+    FeedbackService.getFeedback(props.postId)
       .then( res => res.data)
       .then( res => {
         setVotes(res.numberOfVotes)
@@ -26,7 +27,7 @@ const Feedback = () => {
         setFeedback(content);
 
         if (isLoggedIn && user.id) {
-          FeedbackService.checkIfVote(user.id)
+          FeedbackService.checkIfVote(user.id, props.postId)
             .then( res => res.data)
             .then( data => {
               setVotedFor(data.votedFor)
@@ -40,7 +41,7 @@ const Feedback = () => {
     // написати перевірку чи користувач зареєстрований
     if (isLoggedIn && user.id) {
       if (votedFor) {
-        FeedbackService.unVote(user.id)
+        FeedbackService.unVote(user.id, props.postId)
           .then( res => {
             setVotes(votes - 1);
             setVotedFor(false);
@@ -50,7 +51,7 @@ const Feedback = () => {
           })
 
       } else {
-        FeedbackService.vote(user.id)
+        FeedbackService.vote(user.id, props.postId)
           .then( res => {
             setVotes(votes + 1);
             setVotedFor(true)
@@ -79,10 +80,10 @@ const Feedback = () => {
       <div className={styles.feedback_cell}>
         <h4 className={styles.feedback_title}>{title}</h4>
         <p className={styles.feedback_subtitle}>{feedback}</p>
-        </div>
+      </div> 
       <div className={styles.feedback_comments_component}>
         <img className={styles.comments_icon} src={comments_icon} alt="comments icon" />
-        7
+        0
       </div>
     </div>
   );

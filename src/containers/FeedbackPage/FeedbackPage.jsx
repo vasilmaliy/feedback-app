@@ -1,7 +1,7 @@
 import styles from './FeedbackPage.module.css';
-import AddComment from '@components/AddComment';
 import Feedback from '@components/Feedback/Feedback';
 import PostLinkBack from '@components/PostLinkBack';
+import Comments from '@components/Comments';
 
 const FeedbackPage = ({match}) => {
 
@@ -11,7 +11,7 @@ const FeedbackPage = ({match}) => {
     <>
       <PostLinkBack/>
       <Feedback postId={id}/>
-      <AddComment/>
+      <Comments postId={id}/>
     </>
   )
 }

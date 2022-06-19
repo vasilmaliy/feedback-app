@@ -10,6 +10,10 @@ const getFeedbacks = () => {
   return axios.get(API_FEEDBACK + 'posts');
 };
 
+const getComments = (postId) => {
+  return axios.get(API_FEEDBACK + 'comments/?postId=' + postId);
+};
+
 const unVote = (userId, postId) => {
   return axios.delete(API_FEEDBACK + 'unvote/?userId=' + userId + "&postId="+postId, 
   {
@@ -36,10 +40,27 @@ const checkIfVote = (userId, postId) => {
   });
 };
 
+const comment = ({ id, text, userName, postId}) => {
+  return axios.post(
+    API_FEEDBACK + 'comment',
+    {
+      userId: id,
+      userName,
+      postId,
+      text
+    },
+    {
+      headers: authHeader(),
+    }
+  );
+};
+
 export default {
   getFeedback,
   getFeedbacks,
   vote,
   unVote,
   checkIfVote,
+  getComments,
+  comment
 };

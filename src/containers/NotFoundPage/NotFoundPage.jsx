@@ -8,7 +8,7 @@ const NotFoundPage = () => {
 
   return (
     <>
-      <img className={styles.img} src={img} alt="Not found"/>
+      {/*<img className={styles.img} src={img} alt="Not found"/>*/}
       <p className={styles.text}>No match for <u>{location.pathname}</u>. Go to <NavLink to="/" exact>Home page</NavLink></p>
     </>
   )

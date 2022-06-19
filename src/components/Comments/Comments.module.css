@@ -1,0 +1,15 @@
+.no_comment {
+  min-height: 50px;
+  color: #000;
+  text-decoration: none;
+  margin: 0px 0px 20px 0px;
+  padding: 24px 32px;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-medium);
+
+  color: var(--dark-blue);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 26px;
+}
+

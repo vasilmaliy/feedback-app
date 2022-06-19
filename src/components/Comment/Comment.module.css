@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  padding: 10px 6px;
+  min-height: 80px;
+  border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+.user_avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 5px;
+  border-radius: 50%;
+  color: var(--color-white);
+  width: 40px;
+  height: 40px;
+  background-color: rgb(255, 175, 244);
+}
+
+.user_name {
+  font-weight: 700;
+  padding: 1px 3px;
+}
+
+.text {
+  font-weight: 400;
+  padding: 2px 5px;
+}

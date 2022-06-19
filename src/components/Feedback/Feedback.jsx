@@ -10,16 +10,18 @@ const Feedback = (props) => {
   
   const [user, setUser] = useState({})
   const [votes, setVotes] = useState(0);
+  const [numberOfComments, setNumberOfComments] = useState(0);
   const [votedFor, setVotedFor] = useState(false);
   const [title, setTitle] = useState('');
   const [feedback, setFeedback] = useState('');
   const { isLoggedIn } = useSelector(state => state.auth);
 
-  const getResourse = ()  => {
+  const getResourсe = ()  => {
     FeedbackService.getFeedback(props.postId)
       .then( res => res.data)
       .then( res => {
         setVotes(res.numberOfVotes)
+        setNumberOfComments(res.numberOfComments)
         return res.post
       })
       .then( ({ title, content }) => {
@@ -68,7 +70,7 @@ const Feedback = (props) => {
   }, [])
 
   useEffect(() => {
-    getResourse();
+    getResourсe();
   }, [user])
 
   return (
@@ -83,7 +85,7 @@ const Feedback = (props) => {
       </div> 
       <div className={styles.feedback_comments_component}>
         <img className={styles.comments_icon} src={comments_icon} alt="comments icon" />
-        0
+        {numberOfComments}
       </div>
     </div>
   );

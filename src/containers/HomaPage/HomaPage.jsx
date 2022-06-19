@@ -18,8 +18,7 @@ const HomaPage = () => {
 
   return (
     <>
-      {feedbacks.map( feedback => <Link to={`/posts/${feedback.id}`}>
-        <Feedback postId={feedback.id}/></Link>)}
+      {feedbacks.map( feedback => <Link to={`/posts/${feedback.id}`}><Feedback postId={feedback.id}/></Link>)}
       {/*<AddComment/> */}
     </>
   )

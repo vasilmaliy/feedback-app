@@ -3,6 +3,8 @@ import Login from '@components/Login';
 import Register from '@components/Register';
 import NotFoundPage from '@containers/NotFoundPage';
 import FeedbackPage from '@containers/FeedbackPage';
+import CreateFeedbackPage from '@containers/CreateFeedbackPage';
+import FeedbackCategories from '@containers/FeedbackCategories';
 
 const routesConfig = [
   {
@@ -25,6 +27,21 @@ const routesConfig = [
     exact: true,
     component: Register,
   },
+  {
+    path: '/register',
+    exact: true,
+    component: FeedbackCategories,
+  },
+  {
+    path: '/categories',
+    exact: true,
+    component: FeedbackCategories,
+  },
+  {
+     path: '/addplace',
+     exact: true,
+     component: CreateFeedbackPage,
+   },
   {
     path: '*',
     exact: false,

@@ -15,8 +15,7 @@ const getComments = (postId) => {
 };
 
 const unVote = (userId, postId) => {
-  return axios.delete(API_FEEDBACK + 'unvote/?userId=' + userId + "&postId="+postId, 
-  {
+  return axios.delete(API_FEEDBACK + 'unvote/?userId=' + userId + '&postId=' + postId, {
     headers: authHeader(),
   });
 };
@@ -35,19 +34,35 @@ const vote = (userId, postId) => {
 };
 
 const checkIfVote = (userId, postId) => {
-  return axios.get(API_FEEDBACK + 'vote/?userId=' + userId + "&postId=" + postId, {
+  return axios.get(API_FEEDBACK + 'vote/?userId=' + userId + '&postId=' + postId, {
     headers: authHeader(),
   });
 };
 
-const comment = ({ id, text, userName, postId}) => {
+const comment = ({ id, text, userName, postId }) => {
   return axios.post(
     API_FEEDBACK + 'comment',
     {
       userId: id,
       userName,
       postId,
-      text
+      text,
+    },
+    {
+      headers: authHeader(),
+    }
+  );
+};
+
+// const post = ({ id, text, userName, postId}) => {
+const post = ({ id, userName, text, content }) => {
+  return axios.post(
+    API_FEEDBACK + 'addpost',
+    {
+      userId: id,
+      userName,
+      text,
+      content
     },
     {
       headers: authHeader(),
@@ -62,5 +77,6 @@ export default {
   unVote,
   checkIfVote,
   getComments,
-  comment
+  comment,
+  post,
 };

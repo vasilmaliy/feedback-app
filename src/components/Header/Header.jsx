@@ -31,6 +31,9 @@ const Header = () => {
           : (
           <ul className={styles.header}>
             <li>
+            <NavLink className={styles.authentication}  to="/addplace" exact>Add Place</NavLink>
+            </li>
+            <li>
                 <a className={cs(styles.authentication, styles.singOutBtn)} onClick={handleLogOut}>
                     Sign out
                 </a>
